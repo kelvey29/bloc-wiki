@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  # get 'users/new'
 
-  get 'welcome/about'
+  # get 'users/show'
+
+  # get 'users/create'
+
+  resources :users, only: [:new, :show, :create]
+
+  get 'about' => 'welcome#about'
   
   root to: 'welcome#index'
 
